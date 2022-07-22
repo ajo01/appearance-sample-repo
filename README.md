@@ -41,25 +41,25 @@ Expected behavior: The website should automatically download a pdf with an annot
 
 Example 1: Simple Rectangle
 
-```
+```js
 const draw = (ctx) => {
-ctx.fillStyle = "red";
-ctx.lineWidth = "20";
-ctx.strokeStyle = "blue";
-ctx.rect(100, 100, 200, 200);
-ctx.fill();
-ctx.stroke();
+  ctx.fillStyle = "red";
+  ctx.lineWidth = "20";
+  ctx.strokeStyle = "black";
+  ctx.rect(100, 100, 200, 200);
+  ctx.fill();
+  ctx.stroke();
 };
 
 createAppearance(draw).then((res) => {
-    saveAs(res, "example.pdf", true);
+  saveAs(res, "example.pdf", true);
 });
 ```
 <img width="427" alt="case1" src="https://user-images.githubusercontent.com/70789275/180508517-e48233e8-b740-4fe3-a120-4b8db90edc70.png">
 
 Example 2: Gradient circle patterns
 
-```
+```js
 const draw = (ctx) => {
   for (let i = 0; i < 12; i++) {
     for (let j = 0; j < 12; j++) {
@@ -75,7 +75,7 @@ const draw = (ctx) => {
 };
 
 createAppearance(draw).then((res) => {
-    saveAs(res, "example.pdf", true);
+  saveAs(res, "example.pdf", true);
 });
 ```
 
@@ -83,13 +83,13 @@ createAppearance(draw).then((res) => {
 
 Example 3: ellipse hatch annotation
 
-```
+```js
 const draws = (ctx) => {
-  width = 200;
-  height = 100;
+  let width = 200;
+  let height = 100;
 
-  X = 300;
-  Y = 300;
+  let X = 300;
+  let Y = 300;
 
   const whRatio = width / height;
   ctx.save();
@@ -131,7 +131,9 @@ const draws = (ctx) => {
 };
 
 createAppearance(draw).then((res) => {
-    saveAs(res, "example.pdf", true);
+  saveAs(res, "example.pdf", true);
 });
 ```
 <img width="451" alt="case3" src="https://user-images.githubusercontent.com/70789275/180509024-53da7e29-13d7-4b01-a68e-c239280196d8.png">
+
+Note: annotation for case 3 will not display correctly on Chrome. Please test on Safari.
