@@ -55,6 +55,7 @@ createAppearance(draw).then((res) => {
     saveAs(res, "example.pdf", true);
 });
 ```
+<img width="427" alt="case1" src="https://user-images.githubusercontent.com/70789275/180508517-e48233e8-b740-4fe3-a120-4b8db90edc70.png">
 
 Example 2: Gradient circle patterns
 
@@ -77,6 +78,8 @@ createAppearance(draw).then((res) => {
     saveAs(res, "example.pdf", true);
 });
 ```
+
+<img width="450" alt="case2" src="https://user-images.githubusercontent.com/70789275/180508978-1b147c6d-746a-4ae9-a58b-67f41dc2ee5b.png">
 
 Example 3: ellipse hatch annotation
 
@@ -131,3 +134,4 @@ createAppearance(draw).then((res) => {
     saveAs(res, "example.pdf", true);
 });
 ```
+<img width="451" alt="case3" src="https://user-images.githubusercontent.com/70789275/180509024-53da7e29-13d7-4b01-a68e-c239280196d8.png">
