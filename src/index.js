@@ -1,10 +1,3 @@
-import createAppearance from "../api/createAppearance";
-import saveAs from "./FileSaver";
+import draw from "./draw";
 
-const draw = (ctx) => {
-  // enter canvas methods here!
-};
-
-createAppearance(draw).then((res) => {
-  saveAs(res, "appearance.pdf", true);
-});
+export default draw;

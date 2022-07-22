@@ -10,9 +10,9 @@ takes in a function containing canvas methods as a parameter and outputs a blob.
 
 The api folder contains the bundled dependencies for the createAppearance api.
 
-The src folder contains the index.js file. This is where you can try adding your own functions to add as parameters in the createAppearance api.
+The src folder contains the script.js and draw.js file. The draw.js file is where you can try adding your own functions to add as parameters in the createAppearance api while the script.js is where the api is actually being called.
 
-The dist folder contains the bundled file of the index.js file. The index.html file relies on the customer.js bundle and you will have to run the build command every time you make changes to the index.js file to see changes reflected.
+The dist folder contains the bundled file of the script.js file. The index.html file relies on the customer.js bundle and you will have to run the build command every time you make changes to the script.js file to see changes reflected.
 
 ## Commands
 
@@ -24,14 +24,14 @@ You can then use vscode live server or http-server to run the project.
 
 ### build
 
-Run this every time you change the index.js file. This will update the customer.js bundle file used in index.html
+Run this every time you change the script.js file. This will update the customer.js bundle file used in index.html
 
 `npm run build`
 
 ### step by step summary
 
 1. Run `npm i`
-2. Update the draw function in index.js file
+2. Update the draw function in script.js file
 3. Run `npm run build`
 4. Open live server or http-server
 
@@ -55,6 +55,7 @@ createAppearance(draw).then((res) => {
   saveAs(res, "example.pdf", true);
 });
 ```
+
 <img width="427" alt="case1" src="https://user-images.githubusercontent.com/70789275/180508517-e48233e8-b740-4fe3-a120-4b8db90edc70.png">
 
 Example 2: Gradient circle patterns
@@ -84,7 +85,7 @@ createAppearance(draw).then((res) => {
 Example 3: ellipse hatch annotation
 
 ```js
-const draws = (ctx) => {
+const draw = (ctx) => {
   let width = 200;
   let height = 100;
 
@@ -134,6 +135,7 @@ createAppearance(draw).then((res) => {
   saveAs(res, "example.pdf", true);
 });
 ```
+
 <img width="451" alt="case3" src="https://user-images.githubusercontent.com/70789275/180509024-53da7e29-13d7-4b01-a68e-c239280196d8.png">
 
 Note: annotation for case 3 will not display correctly on Chrome. Please test on Safari.

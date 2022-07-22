@@ -1,6 +1,32 @@
 <html>
   <head>
     <script src="./dist/customer.js"></script>
+    <script src="./src/draw.js"></script>
   </head>
-  <h1>Vector Appearance's Sample Repository</h1>
+  <div
+    style="
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-top: 20px;
+    "
+  >
+    <h1>Vector Appearance Sample Repository</h1>
+    <h3>
+      The canvas below is an html canvas which should show the expected
+      annotation. The downloaded pdf will contain vector appearances.
+    </h3>
+    <canvas
+      id="htmlCanvas"
+      width="700px"
+      height="700px"
+      style="border: 1px black solid"
+    ></canvas>
+  </div>
+
+  <script type="text/javascript">
+    const canvas = document.getElementById("htmlCanvas");
+    const contex = canvas.getContext("2d");
+
+    draw(contex);
+  </script>
 </html>
