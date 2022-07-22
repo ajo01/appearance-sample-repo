@@ -3,7 +3,7 @@
 Welcome! This is the sample repository for vector appearances.
 Here you will find information on the api, how to set the project up, and sample code for calling it.
 
-The createAppearance api allows a user to call canvas methods to create a pdf with vector appearances. It
+The createAppearance api allows a user to call canvas methods on a pdf to create vector appearances. It
 takes in a function containing canvas methods as a parameter and outputs a blob. A user can then optionally use the FileSaver dependency to convert the blob to a pdf and download it.
 
 ## Project structure
@@ -12,7 +12,30 @@ The api folder contains the bundled dependencies for the createAppearance api.
 
 The src folder contains the index.js file. This is where you can try adding your own functions to add as parameters in the createAppearance api.
 
-The dist folder contains the bundled file of the index.js file. You will have to run the build command every time you make changes to the index.js file to see changes reflected.
+The dist folder contains the bundled file of the index.js file. The index.html file relies on the customer.js bundle and you will have to run the build command every time you make changes to the index.js file to see changes reflected.
+
+## Commands
+
+### setup
+
+`npm i`
+
+You can then use vscode live server or http-server to run the project.
+
+### build
+
+Run this every time you change the index.js file. This will update the customer.js bundle file used in index.html
+
+`npm run build`
+
+### step by step summary
+
+1. Run `npm i`
+2. Update the draw function in index.js file
+3. Run `npm run build`
+4. Open live server or http-server
+
+Expected behavior: The website should automatically download a pdf with an annotation you had drawn with canvas methods. The annotation should have vector image quality.
 
 ## Sample code
 
@@ -108,17 +131,3 @@ createAppearance(draw).then((res) => {
     saveAs(res, "example.pdf", true);
 });
 ```
-
-# Commands
-
-## setup
-
-`npm i`
-
-You can then use vscode live server or http-server to run the project.
-
-## build
-
-Run this every time you change the index.js file. This will update the customer.js bundle file used in index.html
-
-`npm run build`
