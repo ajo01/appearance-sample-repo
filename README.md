@@ -3,8 +3,9 @@
 Welcome! This is the sample repository for vector appearances.
 Here you will find information on the api, how to set the project up, and sample code for calling it.
 
-The createAppearance api allows a user to call canvas methods on a pdf to create vector appearances. It
-takes in a function containing canvas methods as a parameter and outputs a blob. A user can then optionally use the FileSaver dependency to convert the blob to a pdf and download it.
+Annotation appearances are a special way of rendering an annotation inside a PDF and can be useful in scenarios where users require custom annotations. Usually appearances involve rasterization, leading to blurriness of the annotation when you zoom in. Note that this library generates actual PDF drawing calls to create a PDF with vector graphics.
+
+The createAppearance api allows a user to call canvas methods on a pdf to create appearances. It takes in a function containing canvas methods as a parameter and outputs a blob. A user can then optionally use the FileSaver dependency to convert the blob to a pdf and download it. The api uses modified versions of canvas2pdf and pdfkit under the hood, bundled as the createAppearance.js file with Webpack.
 
 ## Project structure
 
@@ -18,7 +19,9 @@ The dist folder contains the bundled file of the script.js file. The index.html 
 
 ### setup
 
-`npm i`
+```bash
+npm i
+```
 
 You can then use vscode live server or http-server to run the project.
 
@@ -26,7 +29,9 @@ You can then use vscode live server or http-server to run the project.
 
 Run this every time you change the script.js file. This will update the customer.js bundle file used in index.html
 
-`npm run build`
+```bash
+npm run build
+```
 
 ### step by step summary
 
@@ -50,10 +55,6 @@ const draw = (ctx) => {
   ctx.fill();
   ctx.stroke();
 };
-
-createAppearance(draw).then((res) => {
-  saveAs(res, "example.pdf", true);
-});
 ```
 
 <img width="427" alt="case1" src="https://user-images.githubusercontent.com/70789275/180508517-e48233e8-b740-4fe3-a120-4b8db90edc70.png">
@@ -74,10 +75,6 @@ const draw = (ctx) => {
     }
   }
 };
-
-createAppearance(draw).then((res) => {
-  saveAs(res, "example.pdf", true);
-});
 ```
 
 <img width="450" alt="case2" src="https://user-images.githubusercontent.com/70789275/180508978-1b147c6d-746a-4ae9-a58b-67f41dc2ee5b.png">
@@ -130,10 +127,6 @@ const draw = (ctx) => {
     ctx.stroke();
   }
 };
-
-createAppearance(draw).then((res) => {
-  saveAs(res, "example.pdf", true);
-});
 ```
 
 <img width="451" alt="case3" src="https://user-images.githubusercontent.com/70789275/180509024-53da7e29-13d7-4b01-a68e-c239280196d8.png">
