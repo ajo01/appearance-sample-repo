@@ -15,6 +15,18 @@ The src folder contains the script.js and draw.js file. The draw.js file is wher
 
 The dist folder contains the bundled file of the script.js file. The index.html file relies on the customer.js bundle and you will have to run the build command every time you make changes to the script.js file to see changes reflected.
 
+## Prereq
+
+Requires node v16+
+
+http-server installed if not using live server
+
+Can be installed by
+
+```bash
+npm i -g http-server
+```
+
 ## Commands
 
 ### setup
