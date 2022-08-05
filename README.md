@@ -5,7 +5,14 @@ Here you will find information on the api, how to set the project up, and sample
 
 Annotation appearances are a special way of rendering an annotation inside a PDF and can be useful in scenarios where users require custom annotations. Usually appearances involve rasterization, leading to blurriness of the annotation when you zoom in. Note that this library generates actual PDF drawing calls to create a PDF with vector graphics.
 
-The createAppearance api allows a user to call canvas methods on a pdf to create appearances. It takes in a function containing canvas methods as a parameter and outputs a blob. A user can then optionally use the FileSaver dependency to convert the blob to a pdf and download it. The api uses modified versions of canvas2pdf and pdfkit under the hood, bundled as the createAppearance.js file with Webpack.
+The createAppearance api allows a user to call canvas methods on a pdf to create appearances. It takes in a function containing canvas methods as a parameter and outputs a blob. A user can then optionally use the FileSaver dependency to convert the blob to a pdf and download it as it does in this repo. 
+Or a user can use the blob with other apis such as pdftron's webviewer to make further modifications. 
+```js
+const blob = await createAppearance(draw);
+const doc = await Core.createDocument(blob, { extension: "pdf" });
+// annotation.addCustomAppearance(doc, { pageNumber: 1 });
+```
+The api uses modified versions of canvas2pdf and pdfkit under the hood, bundled as the createAppearance.js file with Webpack.
 
 ## Project structure
 
