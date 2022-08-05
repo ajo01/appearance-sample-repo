@@ -36,18 +36,18 @@ eval("/*\n * FileSaver.js\n * A saveAs() FileSaver implementation.\n *\n * By El
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction draw(ctx) {\n  // enter canvas methods here!\n  for (let i = 0; i < 12; i++) {\n    for (let j = 0; j < 12; j++) {\n      ctx.strokeStyle = `rgb(\n    0,\n    ${Math.floor(255 - 42.5 * i)},\n    ${Math.floor(255 - 42.5 * j)})`;\n      ctx.beginPath();\n      ctx.arc(25 + j * 40, 25 + i * 40, 15, 0, Math.PI * 2, true);\n      ctx.stroke();\n    }\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (draw);\n\n\n//# sourceURL=webpack:///./src/draw.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ draw)\n/* harmony export */ });\nfunction draw(ctx) {\n  // enter canvas methods here!\n  for (let i = 0; i < 12; i++) {\n    for (let j = 0; j < 12; j++) {\n      ctx.strokeStyle = `rgb(\n    0,\n    ${Math.floor(255 - 42.5 * i)},\n    ${Math.floor(255 - 42.5 * j)})`;\n      ctx.beginPath();\n      ctx.arc(25 + j * 40, 25 + i * 40, 15, 0, Math.PI * 2, true);\n      ctx.stroke();\n    }\n  }\n}\n\n\n//# sourceURL=webpack:///./src/draw.js?");
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./src/script.js":
+/*!***********************!*\
+  !*** ./src/script.js ***!
+  \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _api_createAppearance__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api/createAppearance */ \"./api/createAppearance.js\");\n/* harmony import */ var _api_createAppearance__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_api_createAppearance__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _FileSaver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FileSaver */ \"./src/FileSaver.js\");\n/* harmony import */ var _FileSaver__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_FileSaver__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _draw__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./draw */ \"./src/draw.js\");\n\n\n\n\n_api_createAppearance__WEBPACK_IMPORTED_MODULE_0___default()(_draw__WEBPACK_IMPORTED_MODULE_2__[\"default\"]).then((res) => {\n  _FileSaver__WEBPACK_IMPORTED_MODULE_1___default()(res, \"appearance.pdf\", true);\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _api_createAppearance__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api/createAppearance */ \"./api/createAppearance.js\");\n/* harmony import */ var _api_createAppearance__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_api_createAppearance__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _FileSaver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FileSaver */ \"./src/FileSaver.js\");\n/* harmony import */ var _FileSaver__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_FileSaver__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _draw__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./draw */ \"./src/draw.js\");\n\n\n\n\n_api_createAppearance__WEBPACK_IMPORTED_MODULE_0___default()(_draw__WEBPACK_IMPORTED_MODULE_2__[\"default\"]).then((res) => {\n  _FileSaver__WEBPACK_IMPORTED_MODULE_1___default()(res, \"appearance.pdf\", true);\n});\n\n\n//# sourceURL=webpack:///./src/script.js?");
 
 /***/ })
 
@@ -135,7 +135,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _api
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/script.js");
 /******/ 	
 /******/ })()
 ;
