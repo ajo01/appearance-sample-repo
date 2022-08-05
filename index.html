@@ -1,7 +1,6 @@
 <html>
   <head>
     <script src="./dist/customer.js"></script>
-    <script src="./src/draw.js"></script>
   </head>
   <div
     style="
@@ -13,7 +12,8 @@
     <h1>Vector Appearance Sample Repository</h1>
     <h3>
       The canvas below is an html canvas which should show the expected
-      annotation. The downloaded pdf will contain vector appearances.
+      annotation and is there only as a point of comparison. The downloaded pdf
+      will contain vector appearances and the actual annotation.
     </h3>
     <canvas
       id="htmlCanvas"
@@ -23,7 +23,8 @@
     ></canvas>
   </div>
 
-  <script type="text/javascript">
+  <script type="module">
+    import draw from "./src/draw.js";
     const canvas = document.getElementById("htmlCanvas");
     const contex = canvas.getContext("2d");
 
